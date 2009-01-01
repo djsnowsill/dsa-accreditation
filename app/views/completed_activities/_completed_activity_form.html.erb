@@ -1,0 +1,32 @@
+  <%= f.error_messages %>
+
+  <p>
+    Activity Reference Number<br />
+    <%= text_field_with_auto_complete( 	:completed_activity,
+ 										:activity_reference_number,
+ 										{},
+ 										{:url => formatted_activities_path(:js), :method => :get, :with => "'search=' + element.value"} ) %>
+   <div id="activity_description"></div>
+  </p>
+	<br/>
+  <p>
+    <%= f.label  :completed_on %><br />
+    <%= date_select("completed_activity", "completed_on")%>
+  </p>
+  <p>
+    <%= f.label  :units %><br />
+    <%= f.text_field :units %>
+  </p>
+  <p>
+    Comments<br />
+    <%= f.text_area :description %>
+  </p>
+  <br/>
+	
+	 
+<%= observe_field 	'completed_activity_activity_reference_number',
+					:on => 'blur',
+				 	:frequency => 0.50,
+					:url => {:action => 'update_defaults'},
+					:with => "'reference_number=' + element.value"
+					 %>

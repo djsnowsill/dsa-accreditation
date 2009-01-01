@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+		<%= render(:partial=>"shared/member", :object=>@member) %>
+		
+		<br/>
+		
+		<h2>Completed CPD Activities </h2>
+		
+		<table class="listing">
+		  <tr>
+		    <th>Activity Reference Number</th>
+		    <th>Activity Description</th>
+		    <th>Completed On?</th>
+		    <th>Units</th>
+		    <th>Comments</th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+
+		<% for completed_activity in @member.completed_activities %>
+		  <tr class="<%= cycle('even', 'odd') %>">
+		    <td><%=h completed_activity.activity.reference_number unless !completed_activity.activity %></td>
+		    <td><%=h completed_activity.activity.description unless !completed_activity.activity %></td>
+		    <td><%=h completed_activity.completed_on %></td>
+		    <td><%=h completed_activity.units %></td>
+		    <td><%=h completed_activity.description %></td>
+		    <td><%= link_to 'Edit', edit_member_completed_activity_path(@member,completed_activity) %></td>
+		    <td><%= link_to 'Remove', member_completed_activity_path(@member,completed_activity), :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+		
+		<%= link_to 'Add New Completed Activity', new_member_completed_activity_path(@member) %>
+		
+		<p>
+			<br>
+			<%= link_to 'Back', members_path %>
+		</p>
+	</body>
+</html>
+

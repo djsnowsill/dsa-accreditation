@@ -1,0 +1,16 @@
+<h1>Editing member</h1>
+
+<% form_for(@member) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :member_number %><br />
+    <%= f.text_field :member_number %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @member %> |
+<%= link_to 'Back', members_path %>

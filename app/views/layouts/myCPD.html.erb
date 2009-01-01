@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>DanceSport Australia Accreditation System</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "myCPD", :media => "all" %>
+  <%= javascript_include_tag :defaults %>	
+<!-- END:stylesheet -->
+</head>
+<body id="container">
+  <div id="banner">
+    <%= image_tag("logo.png", :size => "90x50") %>
+    <%= @page_title || "DSA Accreditation Commission" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <%= link_to "Accredited Members", :controller => "members", :action=> "index" %>
+	  <br/>
+	  <br/>
+	  Maintenance
+	  <br/>
+	  <%= link_to "Maintain CPD Activities", activities_path %>
+	  <br/>
+      <%= link_to "Import from IMGe", :controller => "members", :action=> "import" %>
+    </div>
+    <div id="main">
+      <%= yield :layout %>
+    </div>
+  </div>
+</body>
+</html>

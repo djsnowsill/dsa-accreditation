@@ -1,0 +1,42 @@
+<h1>CPD Activities Maintenance</h1>
+
+<table class="listing">
+  <tr >
+	<th>Accreditation type</th>
+    <th>Reference number</th>
+    <th>Activity type</th>
+    <th>Activity level</th>
+    <th>Description</th>
+    <th>Units</th>
+    <th>Max units per year</th>
+    <th>Mandatory?</th>
+    <th>Bonus?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+  </tr>
+
+<% for activity in @activities %>
+  <tr class="<%= cycle('even', 'odd') %>"
+    <td><%=h activity.accreditation_type %></td>
+    <td><%=h activity.reference_number %></td>
+    <td><%=h activity.activity_type %></td>
+    <td><%=h activity.activity_level %></td>
+    <td><%=h activity.description %></td>
+    <td><%=h activity.units %></td>
+    <td><%=h activity.max_units_per_year %></td>
+    <td><%=h activity.mandatory %></td>
+    <td><%=h activity.bonus %></td>
+    <td><%= link_to 'Show', activity %></td>
+    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+    <td><%= link_to 'Remove', activity, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @members %>
+
+<br />
+
+<%= link_to 'New CPD Activity', new_activity_path %>

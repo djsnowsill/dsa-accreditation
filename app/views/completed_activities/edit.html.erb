@@ -1,0 +1,23 @@
+<%= render(:partial=>"shared/member", :object=>@member) %>
+		
+<br/>
+		
+<h2>Completed Activity</h2>
+
+<br/>
+
+<% form_for([@member,@completed_activity]) do |f| %>
+
+  <%= render(	:partial => "completed_activity_form", 
+				:object => @completed_activity,
+				:locals => { :f => f } ) %>	
+	
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+								
+<% end %>
+
+<br/>
+
+<%= link_to 'Back', member_completed_activities_path(@member) %>

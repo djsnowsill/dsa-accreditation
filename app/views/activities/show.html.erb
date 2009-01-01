@@ -1,0 +1,48 @@
+<p>
+  <b>Accreditation type:</b>
+  <%=h @activity.accreditation_type %>
+</p>
+
+<p>
+  <b>Reference number:</b>
+  <%=h @activity.reference_number %>
+</p>
+
+<p>
+  <b>Activity type:</b>
+  <%=h @activity.activity_type %>
+</p>
+
+<p>
+  <b>Activity level:</b>
+  <%=h @activity.activity_level %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @activity.description %>
+</p>
+
+<p>
+  <b>Units:</b>
+  <%=h @activity.units %>
+</p>
+
+<p>
+  <b>Max units per year:</b>
+  <%=h @activity.max_units_per_year %>
+</p>
+
+<p>
+  <b>Mandatory:</b>
+  <%=h @activity.mandatory %>
+</p>
+
+<p>
+  <b>Bonus:</b>
+  <%=h @activity.bonus %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

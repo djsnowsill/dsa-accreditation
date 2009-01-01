@@ -1,0 +1,60 @@
+<table>
+	<tr>
+		<td>
+			<b>Member Number:</b>
+		</td>
+		<td>
+			<%=h @member.member_number %>
+		</td>
+	</tr>
+	<tr><td/></tr>
+	<tr>
+		<td>
+			<b>Name:</b>
+		</td>
+		<td>
+			<%=h @member.title %> <%=h @member.first_name %> <%=h @member.last_name %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>Member Type:</b>
+		</td>
+		<td>
+			<%=h @member.member_type %>
+		</td>
+	</tr>
+	<tr><td/></tr>
+	<tr>
+		<td>
+			<b>Address:</b>
+		</td>
+		<td>
+			<%=h @member.address1 %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b></b>
+		</td>
+		<td>
+			<%=h @member.address2 %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b></b>
+		</td>
+		<td>
+			<%=h @member.suburb %> <%=h @member.state %> <%=h @member.postcode %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b></b>
+		</td>
+		<td>
+			<%=h @member.country %>
+		</td>
+	</tr>
+</table>

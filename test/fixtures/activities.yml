@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reference_number: MyString
+  activity_type: MyString
+  activity_level: MyString
+  description: MyString
+  units: 1
+  max_units_per_year: 1
+  mandatory: false
+  accrediation_type: MyString
+
+two:
+  reference_number: MyString
+  activity_type: MyString
+  activity_level: MyString
+  description: MyString
+  units: 1
+  max_units_per_year: 1
+  mandatory: false
+  accrediation_type: MyString
